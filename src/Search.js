@@ -2,19 +2,134 @@ import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 import './Search.css';
 
-// Imagine you have a list of languages that you'd like to autosuggest.
 const currencies = [
   {
     name: 'Bitcoin',
-    symbol: 'BTC'
+    symbol: 'BTC',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/bitcoin.png'/>
   },
   {
     name: 'Ethereum',
-    symbol: 'ETH'
-  }
+    symbol: 'ETH',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/ethereum.png' />
+  },
+  {
+    name: 'Bitcoin Cash',
+    symbol: 'BCH',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/bitcoin-cash.png' />
+  },
+  {
+    name: 'Ripple',
+    symbol: 'XRP',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/ripple.png' />
+  },
+  {
+    name: 'Litecoin',
+    symbol: 'LTC',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/litecoin.png' />
+  },
+  {
+    name: 'Dash',
+    symbol: 'DASH',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/dash.png' />
+  },
+  {
+    name: 'Iota',
+    symbol: 'IOT',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/iota.png' />
+  },
+  {
+    name: 'NEO',
+    symbol: 'ANS',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/neo.png' />
+  },
+  {
+    name: 'Monero',
+    symbol: 'XMR',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/monero.png' />
+  },
+  {
+    name: 'NEM',
+    symbol: 'XEM',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/nem.png' />
+  },
+  {
+    name: 'Ethereum Classic',
+    symbol: 'ETC',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/ethereum-classic.png' />
+  },
+  {
+    name: 'Lisk',
+    symbol: 'LSK',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/lisk.png' />
+  },
+  {
+    name: 'Qtum',
+    symbol: 'QTUM',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/qtum.png' />
+  },
+  {
+    name: 'Zcash',
+    symbol: 'ZEC',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/zcash.png' />
+  },
+  {
+    name: 'Waves',
+    symbol: 'WAVES',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/waves.png' />
+  },
+  {
+    name: 'Stratis',
+    symbol: 'STRAT',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/stratis.png' />
+  },
+  {
+    name: 'Stellar',
+    symbol: 'XLM',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/stellar.png' />
+  },
+  {
+    name: 'BitShares',
+    symbol: 'BTS',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/bitshares.png' />
+  },
+  {
+    name: 'PIVX',
+    symbol: 'PIVX',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/pivx.png' />
+  },
+  {
+    name: 'GameCredits',
+    symbol: 'GAME',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/gamecredits.png' />
+  },
+  {
+    name: 'Metaverse ETP',
+    symbol: 'ETP',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/metaverse.png' />
+  },
+  {
+    name: 'Lykke',
+    symbol: 'LKK',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/lykke.png' />
+  },
+  {
+    name: 'Verge',
+    symbol: 'XVG',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/verge.png' />
+  },
+  {
+    name: 'DigiByte',
+    symbol: 'DGB',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/digibyte.png' />
+  },
+  {
+    name: 'Nxt',
+    symbol: 'NXT',
+    image: <img src='https://files.coinmarketcap.com/static/img/coins/32x32/nxt.png' />
+  }  
 ];
 
-// Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
@@ -24,15 +139,11 @@ const getSuggestions = value => {
   );
 };
 
-// When suggestion is clicked, Autosuggest needs to populate the input
-// based on the clicked suggestion. Teach Autosuggest how to calculate the
-// input value for every given suggestion.
 const getSuggestionValue = suggestion => suggestion.symbol;
 
-// Use your imagination to render suggestions.
 const renderSuggestion = suggestion => (
   <div>
-    {suggestion.name} ({suggestion.symbol})
+    {suggestion.image} {suggestion.name} ({suggestion.symbol})
   </div>
 );
 
@@ -40,15 +151,10 @@ class Search extends React.Component {
   constructor() {
     super();
 
-    // Autosuggest is a controlled component.
-    // This means that you need to provide an input value
-    // and an onChange handler that updates this value (see below).
-    // Suggestions also need to be provided to the Autosuggest,
-    // and they are initially empty because the Autosuggest is closed.
     this.state = {
       value: '',
       suggestions: [],
-      symbol: ''
+      image: ''
     };
   }
 
@@ -58,8 +164,6 @@ class Search extends React.Component {
     });
   };
 
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value)
@@ -71,22 +175,18 @@ class Search extends React.Component {
       value: suggestionValue
     }) 
     this.props.getSymbol(suggestionValue);
+    this.props.dataToggle();
   };
 
-  // Autosuggest will call this function every time you need to clear suggestions.
   onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: []
     });
-    this.props.dataToggle();
   };
-
- 
 
   render() {
     const { value, suggestions } = this.state;
 
-    // Autosuggest will pass through all these props to the input.
     const inputProps = {
       placeholder: 'Type a digital currency here',
       value,

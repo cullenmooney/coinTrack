@@ -1,9 +1,90 @@
-.App-header {
-  background-color: #222;
-  height: 75px;
-  padding: 20px;
-  color: white;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+	box-sizing: border-box;
 }
 
+*:before,
+*:after {
+	box-sizing: border-box;
+}
 
+html, body {
+	height: 100%;
+	position: relative;
+	background-color: white;
+	font-family: 'Lato', sans-serif;
+}
+
+.App {
+	min-height: 100vh;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	padding-bottom: 100px;
+}
+.App-header {
+	height: 45px;
+	padding: 10px;
+	color: #29648A;
+	display: inline-block;
+}
+
+.App-title {
+	color: #464866;
+	font-size: 40px;
+}
+
+.App-links {
+	text-align: right;
+	display: inline-block;
+	color: #29648A;
+	margin-left: 65%;
+	font-size: 20px;
+}
+
+.App-links a {
+	text-decoration: none;
+	color: #29648A;
+	margin-left: 30px;
+}
+
+.Body {
+	text-align: center;
+}
+
+.Line {
+	background-color: #aaabb8;
+	height: 3px;
+	width: 100%;
+}
+
+.LineTwo {
+	background-color: #aaabb8;
+	height: 1px;
+	width: 100%;
+}
+
+.App-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #29648A;
+	color: white;
+}
+
+.Flag {
+	width: 120px;
+	height: 80px;
+	float: left;
+	padding-left: 40px;
+	padding-top: 27px;
+}
+
+.Copyright {
+	float: right;
+	font-size: 20px;
+	padding-top: 20px;
+	padding-right: 40px;
+}

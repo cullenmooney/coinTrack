@@ -25,6 +25,7 @@ class Data extends Component {
       		this.setState(state);
       		this.setValues();
     	})
+
 	}
 
 	setValues = () => {
@@ -41,19 +42,23 @@ class Data extends Component {
 	}
 
 	render() {
-	
+
 	return(
 		<div>
 			{this.state.data ? 
-				<div>
-					<h3>{this.state.coinName}</h3>
+				<div className="DayData">
+					<h1>{this.state.coinName}</h1>
 					<h5>{this.state.coinDayInfo}</h5>
 					<h5>Current Time: {this.state.coinDayTime}</h5>
-					<p>Price: ${(Math.round(this.state.coinDayPrice * 100) / 100).toLocaleString()}</p>
-					<p>Volume: ${(Math.round(this.state.coinDayVolume * 100) / 100).toLocaleString()}</p>
-					<p>Market Cap: ${(Math.round(this.state.coinDayCap * 100) / 100).toLocaleString()}</p>
+					<div>
+						<p>Price: ${(Math.round(this.state.coinDayPrice * 100) / 100).toLocaleString()} |
+							Volume: ${(Math.round(this.state.coinDayVolume * 100) / 100).toLocaleString()} | 
+							Market Cap: ${(Math.round(this.state.coinDayCap * 100) / 100).toLocaleString()}</p>
+					</div>
+					<div className="LineTwo">
+        			</div>
 			</div> : null}
-		</div>		
+		</div>	
 	)
 	
 	}

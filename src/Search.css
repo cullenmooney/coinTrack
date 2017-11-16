@@ -1,21 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+img {
+  height: 25px;
+  width: 25px;
 }
 
 .react-autosuggest__container {
   position: relative;
-  margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 100px;
   margin-left: 36.5%;
 }
 
 .react-autosuggest__input {
-  width: 240px;
-  height: 30px;
+  width: 350px;
+  height: 50px;
   padding: 10px 20px;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 25px;
   border: 1px solid #aaa;
   border-radius: 4px;
 }
@@ -36,13 +42,12 @@ body {
 .react-autosuggest__suggestions-container--open {
   display: block;
   position: absolute;
-  top: 51px;
-  width: 280px;
+  width: 350px;
   border: 1px solid #aaa;
   background-color: #fff;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 25px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   z-index: 2;
@@ -60,5 +65,5 @@ body {
 }
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: #ddd;
+  background-color: #aaabb8;
 }

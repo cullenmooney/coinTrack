@@ -50,10 +50,10 @@ class DataMonthly extends Component {
 				<div>
 					<h5>{this.state.coinMonthInfo}</h5>
 					<h5>Month Of: {this.state.coinMonthTime}</h5>
-					<p>High: ${(Math.round(this.state.coinMonthHigh * 100) / 100).toLocaleString()}</p>
-					<p>Low: ${(Math.round(this.state.coinMonthLow * 100) / 100).toLocaleString()}</p>
-					<p>Volume: ${(Math.round(this.state.coinMonthVolume * 100) / 100).toLocaleString()}</p>
-					<p>Market Cap: ${(Math.round(this.state.coinMonthCap * 100) / 100).toLocaleString()}</p>
+					<p>	High: ${(Math.round(this.state.coinMonthHigh * 100) / 100).toLocaleString()} | 
+						Low: ${(Math.round(this.state.coinMonthLow * 100) / 100).toLocaleString()} | 
+						Volume: ${(Math.round(this.state.coinMonthVolume * 100) / 100).toLocaleString()} | 
+						Market Cap: ${(Math.round(this.state.coinMonthCap * 100) / 100).toLocaleString()}</p>
 			</div> : null}
 		</div>		
 	)

@@ -32,7 +32,7 @@ class DataWeekly extends Component {
 		const state = this.state;
 		state.coinName = this.state.data[ "Meta Data" ][ "3. Digital Currency Name" ]
 		state.coinWeekInfo = this.state.data[ "Meta Data" ][ "1. Information" ]
-		state.coinWeekTime = Object.keys(this.state.data[ "Time Series (Digital Currency Weekly)" ])[0];
+		state.coinWeekTime = Object.keys(this.state.data[ "Time Series (Digital Currency Weekly)" ])[1];
 		state.coinWeekObject = this.state.data["Time Series (Digital Currency Weekly)"][state.coinWeekTime];
 		// coinDayObject gives us the data for that time
 		state.coinWeekHigh = state.coinWeekObject[Object.keys(state.coinWeekObject)[2]];
@@ -50,11 +50,13 @@ class DataWeekly extends Component {
 				<div>
 					<h5>{this.state.coinWeekInfo}</h5>
 					<h5>Week Of: {this.state.coinWeekTime}</h5>
-					<p>High: ${(Math.round(this.state.coinWeekHigh * 100) / 100).toLocaleString()}</p>
-					<p>Low: ${(Math.round(this.state.coinWeekLow * 100) / 100).toLocaleString()}</p>
-					<p>Volume: ${(Math.round(this.state.coinWeekVolume * 100) / 100).toLocaleString()}</p>
-					<p>Market Cap: ${(Math.round(this.state.coinWeekCap * 100) / 100).toLocaleString()}</p>
-			</div> : null}
+					<p>	High: ${(Math.round(this.state.coinWeekHigh * 100) / 100).toLocaleString()} |
+						Low: ${(Math.round(this.state.coinWeekLow * 100) / 100).toLocaleString()} | 
+						Volume: ${(Math.round(this.state.coinWeekVolume * 100) / 100).toLocaleString()} |
+						Market Cap: ${(Math.round(this.state.coinWeekCap * 100) / 100).toLocaleString()}</p>
+					<div className="LineTwo">
+        			</div>
+				</div> : null}
 		</div>		
 	)
 	
