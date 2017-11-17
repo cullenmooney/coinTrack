@@ -51,6 +51,7 @@ class DataWeekly extends Component {
 		if(this.state.loading) {
 			content = <div> <img className='Loader' src='https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif' /> </div>
 		} else {
+			return (
 			content =
 	
 		<div>
@@ -66,12 +67,13 @@ class DataWeekly extends Component {
         			</div>
 				</div>
 		</div>
-
+		)
 		}
 
 		return (
 			<div>{content}</div>
-		)		
+		)
+
 	
 	}
 }

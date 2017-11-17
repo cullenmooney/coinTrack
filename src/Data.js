@@ -50,6 +50,7 @@ class Data extends Component {
 		if(this.state.loading) {
 			content = <div> <img className='Loader' src='https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif' /> </div>
 		} else {
+			return (
 			content =
 		
 
@@ -70,7 +71,7 @@ class Data extends Component {
         			</div>
 				</div>
 		</div>	
-	
+	)
 	}
 
 	return (

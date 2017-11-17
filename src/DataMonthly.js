@@ -51,6 +51,7 @@ class DataMonthly extends Component {
 		if(this.state.loading) {
 			content = <div> <img className='Loader' src='https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif' /> </div>
 		} else {
+			return (
 			content =
 
 		<div> 
@@ -63,6 +64,7 @@ class DataMonthly extends Component {
 					Market Cap: ${(Math.round(this.state.coinMonthCap * 100) / 100).toLocaleString()}</p>
 			</div>
 		</div>
+		)
 		}
 
 		return (
