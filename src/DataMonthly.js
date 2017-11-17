@@ -19,7 +19,7 @@ class DataMonthly extends Component {
 	}
 
 	componentDidMount() {
-    	fetch('https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_' + this.props.time + '&symbol=' + this.props.symbol + '&market=USD&apikey=TQ7HS3L2TEMH2FHP')
+    	fetch('https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_' + this.props.time + '&symbol=' + this.props.symbol + '&market=USD&apikey=4TXTB5LFORS5I6F9')
     	.then(response => response.json())
     	.then(data=> {
       		const state = this.state;
