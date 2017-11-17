@@ -5,6 +5,7 @@ class Data extends Component {
 		super(props)
 
 		this.state={
+			loading: true,
 			data: [],
 			coinName: '',
 			coinDayInfo: '',
@@ -22,6 +23,7 @@ class Data extends Component {
     	.then(data=> {
       		const state = this.state;
       		state.data = data;
+      		state.loading = false;
       		this.setState(state);
       		this.setValues();
     	})
@@ -43,11 +45,20 @@ class Data extends Component {
 
 	render() {
 
-	return(
+		let content;
+
+		if(this.state.loading) {
+			content = <div> <img className='Loader' src='https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif' /> </div>
+		} else {
+			content =
+		
+
+	
 		<div>
-			{this.state.data ? 
 				<div className="DayData">
-					<h1>{this.state.coinName}</h1>
+					<div className="Name">
+						<h1 className="Coin-name">{this.state.coinName}</h1> <button className="X-button" onClick={this.props.dataToggle}>X</button>
+					</div>
 					<h5>{this.state.coinDayInfo}</h5>
 					<h5>Current Time: {this.state.coinDayTime}</h5>
 					<div>
@@ -57,8 +68,13 @@ class Data extends Component {
 					</div>
 					<div className="LineTwo">
         			</div>
-			</div> : null}
+				</div>
 		</div>	
+	
+	}
+
+	return (
+		<div>{content}</div>
 	)
 	
 	}

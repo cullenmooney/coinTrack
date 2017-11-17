@@ -5,6 +5,7 @@ class DataMonthly extends Component {
 		super(props)
 
 		this.state={
+			loading: true,
 			data: [],
 			coinName: '',
 			coinMonthInfo: '',
@@ -23,6 +24,7 @@ class DataMonthly extends Component {
     	.then(data=> {
       		const state = this.state;
       		state.data = data;
+      		state.loading = false;
       		this.setState(state);
       		this.setValues();
     	})
@@ -43,20 +45,30 @@ class DataMonthly extends Component {
 	}
 
 	render() {
+
+		let content;
+
+		if(this.state.loading) {
+			content = <div> <img className='Loader' src='https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif' /> </div>
+		} else {
+			content =
+
+		<div> 
+			<div>
+				<h5>{this.state.coinMonthInfo}</h5>
+				<h5>Month Of: {this.state.coinMonthTime}</h5>
+				<p>	High: ${(Math.round(this.state.coinMonthHigh * 100) / 100).toLocaleString()} | 
+					Low: ${(Math.round(this.state.coinMonthLow * 100) / 100).toLocaleString()} | 
+					Volume: ${(Math.round(this.state.coinMonthVolume * 100) / 100).toLocaleString()} | 
+					Market Cap: ${(Math.round(this.state.coinMonthCap * 100) / 100).toLocaleString()}</p>
+			</div>
+		</div>
+		}
+
+		return (
+			<div>{content}</div>
+		)		
 	
-	return(
-		<div>
-			{this.state.data ? 
-				<div>
-					<h5>{this.state.coinMonthInfo}</h5>
-					<h5>Month Of: {this.state.coinMonthTime}</h5>
-					<p>	High: ${(Math.round(this.state.coinMonthHigh * 100) / 100).toLocaleString()} | 
-						Low: ${(Math.round(this.state.coinMonthLow * 100) / 100).toLocaleString()} | 
-						Volume: ${(Math.round(this.state.coinMonthVolume * 100) / 100).toLocaleString()} | 
-						Market Cap: ${(Math.round(this.state.coinMonthCap * 100) / 100).toLocaleString()}</p>
-			</div> : null}
-		</div>		
-	)
 	
 	}
 }

@@ -88,3 +88,43 @@ html, body {
 	padding-top: 20px;
 	padding-right: 40px;
 }
+
+.X-button {
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	font-size: 16px;
+	background-color: white;
+	color: #2E9CCA;
+	border: 1px solid #2E9CCA;
+	text-align: center;
+	margin-left: 15px;
+}
+
+.X-button:hover {
+	background-color: #2E9CCA;
+	color: white;
+}
+.X-button:focus {
+	outline:0;
+}
+
+.Coin-name {
+	display: inline-block;
+}
+
+.Loader {
+	height: 100px;
+	width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+

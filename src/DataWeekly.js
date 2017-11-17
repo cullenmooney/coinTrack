@@ -5,6 +5,7 @@ class DataWeekly extends Component {
 		super(props)
 
 		this.state={
+			loading: true,
 			data: [],
 			coinName: '',
 			coinWeekInfo: '',
@@ -23,6 +24,7 @@ class DataWeekly extends Component {
     	.then(data=> {
       		const state = this.state;
       		state.data = data;
+      		state.loading = false;
       		this.setState(state);
       		this.setValues();
     	})
@@ -43,10 +45,16 @@ class DataWeekly extends Component {
 	}
 
 	render() {
+
+		let content;
+
+		if(this.state.loading) {
+			content = <div> <img className='Loader' src='https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif' /> </div>
+		} else {
+			content =
 	
-	return(
 		<div>
-			{this.state.data ? 
+
 				<div>
 					<h5>{this.state.coinWeekInfo}</h5>
 					<h5>Week Of: {this.state.coinWeekTime}</h5>
@@ -56,9 +64,14 @@ class DataWeekly extends Component {
 						Market Cap: ${(Math.round(this.state.coinWeekCap * 100) / 100).toLocaleString()}</p>
 					<div className="LineTwo">
         			</div>
-				</div> : null}
-		</div>		
-	)
+				</div>
+		</div>
+
+		}
+
+		return (
+			<div>{content}</div>
+		)		
 	
 	}
 }

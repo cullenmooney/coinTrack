@@ -46,7 +46,7 @@ class App extends Component {
         </div>
 
         <div className="Body">
-          {this.state.showData ? <Data time={'INTRADAY'} symbol={this.state.symbol}/> : null}
+          {this.state.showData ? <Data dataToggle={this.dataToggle} time={'INTRADAY'} symbol={this.state.symbol}/> : null}
           {this.state.showData ? <DataWeekly time={'WEEKLY'} symbol={this.state.symbol} /> : null}
           {this.state.showData ? <DataMonthly time={'MONTHLY'} symbol={this.state.symbol} /> : null}
         </div>
